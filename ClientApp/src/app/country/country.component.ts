@@ -29,7 +29,7 @@ export class CountryComponent implements OnInit {
       this.dataService.createCountry(this.country)
         .subscribe((data: Country) => this.countries.push(data));
     } else {
-      this.dataService.updateCountry(this.country)
+      this.dataService.updateCountry(this.country.id, this.country)
         .subscribe(data => this.loadCountries());
     }
     this.cancel();

@@ -22,15 +22,27 @@ namespace AirAstana.Controllers
             {
                 _context.Cities.Add(new City { name = "Almaty", Country = _context.Countries.FirstOrDefault(c=> c.name == "Kazakhstan")});
                 _context.Cities.Add(new City { name = "Moskow", Country = _context.Countries.FirstOrDefault(c=> c.name == "Russia")});
-                _context.Cities.Add(new City { name = "Bishkek", Country = _context.Countries.FirstOrDefault(c=> c.name == "Kyrgyzstan")});
+                _context.SaveChanges();
             }
         }
 
         // GET: api/Cities
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<City>>> GetCities()
+        public string GetCities()
         {
-            return await _context.Cities.ToListAsync();
+            string json = "[";
+            List<City> cities  =  _context.Cities.ToList();
+            foreach ( var city in cities)
+            {
+                json += "{\"id\" : \"" + city.Id + "\"," +
+                     "\"name\" : \"" + city.name + "\"," +
+                     "\"countryId\": \"" + city.CountryId + "\"," +
+                     "\"CountryName\" : \"" + _context.Countries.FirstOrDefault(c => c.Id == city.CountryId).name.ToString() + "\"" +
+                     "},";
+            }
+            json = json.Length <= 1 ? "[" : json.Substring(0, json.Length - 1);
+            json += "]";
+            return json;
         }
 
         // GET: api/Cities/5

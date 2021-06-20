@@ -17,12 +17,12 @@ export class DataService {
     return this.http.get(this.url + '/' + id);
   }
 
-  createCountry(product: Country) {
-    return this.http.post(this.url, product);
+  createCountry(country: Country) {
+    return this.http.post(this.url, country);
   }
-  updateCountry(product: Country) {
+  updateCountry(id: number, country: Country) {
 
-    return this.http.put(this.url, product);
+    return this.http.put(this.url + '/' + id, country);
   }
   deleteCountry(id: number) {
     return this.http.delete(this.url + '/' + id);

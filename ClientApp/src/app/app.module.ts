@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { CountryComponent } from './country/country.component';
+import { CityComponent } from './cities/city.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CountryComponent } from './country/country.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    CountryComponent
+    CountryComponent,
+    CityComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -29,6 +31,7 @@ import { CountryComponent } from './country/country.component';
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'country', component: CountryComponent },
+      { path: 'city', component: CityComponent }
     ])
   ],
   providers: [],

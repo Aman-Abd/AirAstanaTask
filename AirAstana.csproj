@@ -31,14 +31,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\cities\city.component.ts" />
     <None Remove="ClientApp\src\app\cities\City.ts" />
+    <None Remove="ClientApp\src\app\cities\data.service.ts" />
     <None Remove="ClientApp\src\app\country\country.component.ts" />
     <None Remove="ClientApp\src\app\country\Country.ts" />
     <None Remove="ClientApp\src\app\country\data.service.ts" />
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\cities\city.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\cities\City.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\cities\data.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\country\country.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\country\Country.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\country\data.service.ts" />

@@ -1,12 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Country = /** @class */ (function () {
-    function Country(id, name, countryId) {
+var City = /** @class */ (function () {
+    function City(id, name, CountryId, CountryName) {
         this.id = id;
         this.name = name;
-        this.countryId = countryId;
+        this.CountryId = CountryId;
+        this.CountryName = CountryName;
     }
-    return Country;
+    return City;
 }());
-exports.Country = Country;
+exports.City = City;
 //# sourceMappingURL=City.js.map

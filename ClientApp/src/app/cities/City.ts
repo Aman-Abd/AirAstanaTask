@@ -1,7 +1,8 @@
-export class Country {
+export class City {
   constructor(
     public id?: number,
     public name?: string,
-    public countryId?: number
+    public CountryId?: number,
+    public CountryName?: string
   ) { }
 }

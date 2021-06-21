@@ -1,0 +1,77 @@
+<h1>Список рейсов</h1>
+<input type="button" value="Добавить" class="btn btn-default" (click)="add()" />
+<table *ngIf="tableMode; else create" class="table table-striped">
+  <thead>
+    <tr>
+      <th>Город отбытия</th>
+      <th>Город прибытия</th>
+      <th>Дата отбытия</th>
+      <th>Дата прибытия</th>
+      <th>Действие</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let f of flights">
+      <ng-template [ngIf]="flight?.id != f.id" [ngIfElse]="edit">
+        <td>{{f?.from}}</td>
+        <td>{{f?.to}}</td>
+        <td>{{f?.DepartureDate}}</td>
+        <td>{{f?.ArrivedDate}}</td>
+        <td>
+          <button class="btn btn-sm btn-primary" (click)="editFlight(f)">Изменить</button>
+          <button class="btn btn-sm btn-danger" (click)="delete(f)">Удалить</button>
+        </td>
+      </ng-template>
+    </tr>
+  </tbody>
+</table>
+
+<!--шаблон для редактирования-->
+<ng-template #edit>
+  <td>
+    <select class="form-control" [(ngModel)]="flight.from">
+      <option *ngFor="let city of cities" value="{{city.id}}"> {{city.name}}</option>
+    </select>
+  </td>
+  <td>
+    <select class="form-control" [(ngModel)]="flight.to">
+      <option *ngFor="let city of cities" value="{{city.id}}"> {{city.name}}</option>
+    </select>
+  </td>
+  <td>
+    <input class="form-control" type="date" [(ngModel)]="flight.DepartureDate"/>
+  </td>
+  <td>
+    <input class="form-control" type="date" [(ngModel)]="flight.ArrivedDate"/>
+  </td>
+  <td>
+    <input type="button" value="Сохранить" (click)="save()" class="btn btn-sm btn-success" />
+    <input type="button" value="Отмена" (click)="cancel()" class="btn btn-sm btn-warning" />
+  </td>
+</ng-template>
+
+<!--шаблон для добавления-->
+<ng-template #create>
+  <div class="form-group">
+    <label>Город отбытия</label>
+    <select class="form-control" [(ngModel)]="flight.from">
+      <option *ngFor="let city of cities" value="{{city.id}}"> {{city.name}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Город прибытя</label>
+    <select class="form-control" [(ngModel)]="flight.to">
+      <option *ngFor="let city of cities" value="{{city.id}}"> {{city.name}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Дата отправки</label>
+    <input class="form-control" type="date" [(ngModel)]="flight.DepartureDate" />
+    <label>Дата прибытия</label>
+    <input class="form-control" type="date" [(ngModel)]="flight.ArrivedDate" />
+  </div>
+  <div>
+    <input type="button" value="Сохранить" (click)="save()" class="btn btn-success" />
+    <input type="button" value="Отмена" (click)="cancel()" class="btn btn-warning" />
+  </div>
+</ng-template>

@@ -9,7 +9,9 @@ namespace AirAstana.Models
     {
         public int Id { get; set; }
         public City From { get; set; }
+        public int FromId {get;set;}
         public City To { get; set; }
+        public int ToId { get; set; }
         public DateTime DepartureDate { get; set; }
         public DateTime ArrivedDate { get; set; }
     }

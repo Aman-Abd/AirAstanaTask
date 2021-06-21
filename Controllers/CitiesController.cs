@@ -21,7 +21,8 @@ namespace AirAstana.Controllers
             if (!_context.Cities.Any())
             {
                 _context.Cities.Add(new City { name = "Almaty", Country = _context.Countries.FirstOrDefault(c=> c.name == "Kazakhstan")});
-                _context.Cities.Add(new City { name = "Moskow", Country = _context.Countries.FirstOrDefault(c=> c.name == "Russia")});
+                _context.Cities.Add(new City { name = "Moscow", Country = _context.Countries.FirstOrDefault(c=> c.name == "Russia")});
+                _context.Cities.Add(new City { name = "Shymkent", Country = _context.Countries.FirstOrDefault(c=> c.name == "Kazakhstan")});
                 _context.SaveChanges();
             }
         }

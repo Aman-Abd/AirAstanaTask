@@ -49,7 +49,7 @@ namespace AirAstana.Controllers
         public string GetFlights()
         {
             string json = "[";
-            List<Flights> flights = _context.Flights.ToList();
+            List<Flights> flights = _context.Flights.OrderBy(f=> f.DepartureDate).ToList();
             try
             {
                 string delay="";

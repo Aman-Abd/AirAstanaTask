@@ -24,9 +24,9 @@ namespace AirAstana.Controllers
         };
 
         [HttpPost("/token")]
-        public IActionResult Token (string userName, string password)
+        public IActionResult Token ([FromBody]Person person)
         {
-            var identity = GetIdentity(userName, password);
+            var identity = GetIdentity(person.Login, person.Password);
             if (identity == null)
             {
                 return BadRequest(new

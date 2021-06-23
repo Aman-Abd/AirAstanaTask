@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from './data.service';
 import { Flights } from './flights';
 import { City } from '../cities/City';
+import { TokenStorageService } from '../person/token-storage.service';
 
 @Component({
   selector: 'flight',
@@ -14,11 +15,12 @@ export class FlightComponent implements OnInit {
   flights: Flights[];
   cities: City[];
   tableMode: boolean = true;
+  LogIn = this.tokenStorage.getToken != null;
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, private tokenStorage: TokenStorageService) { }
 
   ngOnInit() {
-    this.loadFlights();    // загрузка данных при старте компонента
+    this.loadFlights();    
     this.loadCities();
   }
 

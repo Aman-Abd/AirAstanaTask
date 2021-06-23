@@ -12,12 +12,12 @@
   </thead>
   <tbody>
     <tr *ngFor="let f of flights">
-      <ng-template [ngIf]="flight?.id != f.id" [ngIfElse]="edit">
+      <ng-template [ngIf]="flight?.id != f.id " [ngIfElse]="edit">
         <td>{{f?.from}}</td>
         <td>{{f?.to}}</td>
         <td>{{f?.DepartureDate}}</td>
         <td>{{f?.ArrivedDate}}</td>
-        <td>
+        <td >
           <button class="btn btn-sm btn-primary" (click)="editFlight(f)">Изменить</button>
           <button class="btn btn-sm btn-danger" (click)="delete(f)">Удалить</button>
         </td>

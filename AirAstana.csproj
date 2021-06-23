@@ -41,7 +41,10 @@
     <None Remove="ClientApp\src\app\flights\data.service.ts" />
     <None Remove="ClientApp\src\app\flights\flights.component.ts" />
     <None Remove="ClientApp\src\app\flights\flights.ts" />
+    <None Remove="ClientApp\src\app\person\auth.service.ts" />
+    <None Remove="ClientApp\src\app\person\login.component.ts" />
     <None Remove="ClientApp\src\app\person\person.ts" />
+    <None Remove="ClientApp\src\app\person\token-storage.service.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -54,7 +57,10 @@
     <TypeScriptCompile Include="ClientApp\src\app\flights\data.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\flights\flights.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\flights\flights.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\person\auth.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\person\login.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\person\person.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\person\token-storage.service.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

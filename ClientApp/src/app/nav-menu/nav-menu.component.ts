@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TokenStorageService } from '../person/token-storage.service';
 
 @Component({
   selector: 'app-nav-menu',
@@ -6,7 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav-menu.component.css']
 })
 export class NavMenuComponent {
+
+  constructor( private tokenStorage: TokenStorageService) { }
+
   isExpanded = false;
+  LogIn = this.tokenStorage.getToken() != null && this.tokenStorage.getToken() != "";
 
   collapse() {
     this.isExpanded = false;

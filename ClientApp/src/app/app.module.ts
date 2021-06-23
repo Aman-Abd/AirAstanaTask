@@ -12,6 +12,7 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { CountryComponent } from './country/country.component';
 import { CityComponent } from './cities/city.component';
 import { FlightComponent } from './flights/flights.component';
+import { LoginComponent } from './person/login.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FlightComponent } from './flights/flights.component';
     FetchDataComponent,
     CountryComponent,
     CityComponent,
-    FlightComponent
+    FlightComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -34,7 +36,8 @@ import { FlightComponent } from './flights/flights.component';
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'country', component: CountryComponent },
       { path: 'city', component: CityComponent },
-      { path: 'flight', component: FlightComponent }
+      { path: 'flight', component: FlightComponent },
+      { path: 'login', component: LoginComponent },
     ])
   ],
   providers: [],
